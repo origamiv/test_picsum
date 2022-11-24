@@ -1,0 +1,2 @@
+172.18.0.1 - - [24/Nov/2022:17:04:17 +0000] "GET / HTTP/1.1" 404 27 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:107.0) Gecko/20100101 Firefox/107.0"
+172.18.0.1 - - [24/Nov/2022:17:28:17 +0000] "GET / HTTP/1.1" 200 17660 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:107.0) Gecko/20100101 Firefox/107.0"
