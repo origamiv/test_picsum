@@ -59,7 +59,7 @@
                         @endif
                     </td>
                     <td>
-                        <button class="btnCancel" photoid="{{ $photo->photo_id }}" type="button" class="btn btn-primary">Отменить решение</button>
+                        <button class="btnCancel btn btn-primary" photoid="{{ $photo->photo_id }}" type="button">Отменить решение</button>
                     </td>
                 </tr>
             @endforeach
