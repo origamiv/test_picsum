@@ -13,9 +13,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
             integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
             crossorigin="anonymous"></script>
@@ -29,16 +27,38 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-4 mx-auto">
-            <img src="https://picsum.photos/600/500"/>
+            <img src="https://picsum.photos/id/{{ $photoId }}/600/500"/>
         </div>
     </div>
     <div class="row">
-        <div class="col-md-2 mx-auto">
-            <button type="button" class="btn btn-success">Принять</button>
-            <button type="button" class="btn btn-danger">Отклонить</button>
+        <div class="col-5"></div>
+        <div class="col-1">
+            <button id="btnSuccess" type="button" class="btn btn-success">Принять</button>
         </div>
+        <div class="col-1">
+            <button id="btnDecline" type="button" class="btn btn-danger">Отклонить</button>
+        </div>
+        <div class="col-5"></div>
     </div>
 </div>
+
+<script>
+    $(function () {
+        $('#btnSuccess').on('click', function () {
+            $.post("/photo/{{ $photoId }}", {status: 1})
+                .always(function () {
+                    window.location='/';
+                });
+        });
+        $('#btnDecline').on('click', function () {
+            $.post("/photo/{{ $photoId }}", {status: 2})
+                .always(function () {
+                    window.location='/';
+                });
+        });
+        //console.log( "ready!" );
+    });
+</script>
 
 </body>
 </html>
