@@ -56,7 +56,6 @@
                     window.location='/';
                 });
         });
-        //console.log( "ready!" );
     });
 </script>
 
