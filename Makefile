@@ -21,7 +21,6 @@ update:
 install:
 	env $(env) UID=$(user) docker-compose --file ./docker-compose.yml exec fpm composer install
 	env $(env) UID=$(user) docker-compose --file ./docker-compose.yml exec fpm php artisan key:generate
-	env $(env) UID=$(user) docker-compose --file ./docker-compose.yml exec fpm php artisan storage:link --relative
 	env $(env) UID=$(user) docker-compose --file ./docker-compose.yml exec fpm php artisan migrate:fresh --seed
 
 fresh:
